@@ -24,67 +24,15 @@
         
     </div>
     <hr>
-    <section class="">
-      <form action = "" method = "GET">
-        <div class="card">
-            <div class="card-header">Find Doctors</div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control " id="datepicker"  name="date">
-                        </div>
-                        <div class="col-sm-4">
-                            <button class="btn btn-primary">Find doctors</button>
-                        </div>
+    <!----- Find Doctors Component ----->
 
-                    </div>
-                </div>
-                
-            </div>
-          </form>
-            <div class="card mt-1">
-            <div class="card-header"> Doctors available today</div>
-                <div class="card-body">
+    <find-doctor></find-doctor>
 
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th scope="col">#</th>
-                          <th scope="col">Photo</th>
-                          <th scope="col">Name</th>
-                          <th scope="col">Expertise</th>
-                          <th></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        @php $i = 1; @endphp
-                        @forelse($doctors as $doctor)
-                        <tr>
-                          <th scope="row">{{ $i++ }}</th>
-                          <td><img src="{{ asset('images') }}/{{ $doctor->user->image }}" width="80" style="border-radius: 50%;">
-                          </td>
-                          <td>{{ $doctor->user->name }}</td>
-                          <td>{{ $doctor->user->department }}</td>
-                        <td>
-                           <a href = "{{ route('create.appointment', [$doctor->user_id, $doctor->date]) }}"> <button class="btn btn-success">Book Appointment</button> </a>
-                        </td>
-                        </tr>
 
-                         
-                        @empty
-                        <td scope="row">No Doctors Available Today</td>
-                        @endforelse
-
-                      </tbody>
-                    </table>
-
-                    
-                </div>
-                
-            </div>
-        </div>
-    </section>
 </div>
+
+
+
  
         
 @endsection

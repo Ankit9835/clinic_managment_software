@@ -133,7 +133,7 @@ class AppointmentController extends Controller
 
         $appointmentId = $request->appointmentId;
 
-        $time = Time::where('appointment_id', $appointmentId)->delete();
+        $remove = Time::where('appointment_id', $appointmentId)->delete();
 
         foreach($request->time as $time){
 

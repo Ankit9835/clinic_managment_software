@@ -20,6 +20,7 @@
                                <!--  <div class="nav-item">
                                     <a href="pages/navbar.html"><i class="ik ik-menu"></i><span>Navigation</span> <span class="badge badge-success">New</span></a>
                                 </div> -->
+                                @if(auth()->check() && auth()->user()->role->name === 'admin')
                                 <div class="nav-item has-sub">
                                     <a href="javascript:void(0)"><i class="ik ik-layers"></i><span>Doctors</span> <span class="badge badge-danger"></span></a>
                                     <div class="submenu-content">
@@ -28,7 +29,9 @@
                                         
                                     </div>
                                 </div>
+                                @endif
 
+                                @if(auth()->check() && auth()->user()->role->name === 'doctor')
                                  <div class="nav-item has-sub">
                                     <a href="javascript:void(0)"><i class="ik ik-layers"></i><span>Appointment</span> <span class="badge badge-danger"></span></a>
                                     <div class="submenu-content">
@@ -37,7 +40,30 @@
                                         
                                     </div>
                                 </div>
-                                <div class="nav-lavel">UI Element</div>
+                                @endif
+
+                                @if(auth()->check() && auth()->user()->role->name === 'admin')
+                                 <div class="nav-item has-sub">
+                                    <a href="javascript:void(0)"><i class="ik ik-layers"></i><span>Patient Appointment</span> <span class="badge badge-danger"></span></a>
+                                    <div class="submenu-content">
+                                        <a href="{{ route('patient') }}" class="menu-item">Today Appointment</a>
+                                        <a href="{{ route('all.patient') }}" class="menu-item">All Appointment</a>
+                                        
+                                    </div>
+                                </div>
+                                @endif
+
+                                @if(auth()->check() && auth()->user()->role->name === 'doctor')
+                                 <div class="nav-item has-sub">
+                                    <a href="javascript:void(0)"><i class="ik ik-layers"></i><span>Patient</span> <span class="badge badge-danger"></span></a>
+                                    <div class="submenu-content">
+                                        <a href="{{ route('patient.today') }}" class="menu-item">Patient(Today)</a>
+                                        <a href="{{ route('prescribed.patients') }}" class="menu-item">All Prescription</a>
+                                        
+                                    </div>
+                                </div>
+                                @endif
+                               <!--  <div class="nav-lavel">UI Element</div>
                                 <div class="nav-item has-sub">
                                     <a href="#"><i class="ik ik-box"></i><span>Basic</span></a>
                                     <div class="submenu-content">
@@ -56,8 +82,8 @@
                                         <a href="pages/ui/range-slider.html" class="menu-item">Range Slider</a>
                                         <a href="pages/ui/rating.html" class="menu-item">Rating</a>
                                     </div>
-                                </div>
-                                <div class="nav-item has-sub">
+                                </div> -->
+                                <!-- <div class="nav-item has-sub">
                                     <a href="#"><i class="ik ik-package"></i><span>Extra</span></a>
                                     <div class="submenu-content">
                                         <a href="pages/ui/session-timeout.html" class="menu-item">Session Timeout</a>
@@ -78,7 +104,7 @@
                                 <div class="nav-item">
                                     <a href="pages/form-picker.html"><i class="ik ik-terminal"></i><span>Form Picker</span> <span class="badge badge-success">New</span></a>
                                 </div>
-
+ --><!-- 
                                 <div class="nav-lavel">Tables</div>
                                 <div class="nav-item">
                                     <a href="pages/table-bootstrap.html"><i class="ik ik-credit-card"></i><span>Bootstrap Table</span></a>
@@ -145,14 +171,14 @@
                                 </div>
                                 <div class="nav-item">
                                     <a href="javascript:void(0)"><i class="ik ik-award"></i><span>Sample Page</span></a>
-                                </div>
-                                <div class="nav-lavel">Support</div>
+                                </div> -->
+                               <!--  <div class="nav-lavel">Support</div>
                                 <div class="nav-item">
                                     <a href="javascript:void(0)"><i class="ik ik-monitor"></i><span>Documentation</span></a>
                                 </div>
                                 <div class="nav-item">
                                     <a href="javascript:void(0)"><i class="ik ik-help-circle"></i><span>Submit Issue</span></a>
-                                </div>
+                                </div> -->
                             </nav>
                         </div>
                     </div>

@@ -118,6 +118,7 @@
         <script src="{{ asset('template/js/charts.js') }}"></script>
         <script src="{{ asset('template/dist/js/theme.min.js') }}"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+         <script src="{{ asset('js/app.js') }}" defer></script> 
 
         <script type="text/javascript">
             $(document).ready(function(){
